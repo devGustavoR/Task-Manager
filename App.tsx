@@ -4,7 +4,8 @@ import { TamaguiProvider, YStack } from 'tamagui'
 
 import config from './tamagui.config'
 
-import { Users } from './src/components/Users'
+// import { Users } from './src/components/Users'
+import Home from './src/Home/Home'
 
 export default function App() {
   const [loaded] = useFonts({
@@ -18,8 +19,8 @@ export default function App() {
 
   return (
     <TamaguiProvider config={config}>
-      <YStack bg="$red10Dark" f={1} p="$6" pt="$8">
-        <Users />
+      <YStack bg="$background" f={1}>
+        <Home />
       </YStack>
     </TamaguiProvider>
   )
