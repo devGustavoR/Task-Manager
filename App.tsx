@@ -1,11 +1,12 @@
 import { useFonts } from 'expo-font'
 
-import { TamaguiProvider, YStack } from 'tamagui'
+import { TamaguiProvider } from 'tamagui'
 
 import config from './tamagui.config'
 
-// import { Users } from './src/components/Users'
 import Home from './src/Home/Home'
+
+// import { Users } from './src/components/Users'
 
 export default function App() {
   const [loaded] = useFonts({
@@ -19,9 +20,7 @@ export default function App() {
 
   return (
     <TamaguiProvider config={config}>
-      <YStack bg="$background" f={1}>
-        <Home />
-      </YStack>
+      <Home />
     </TamaguiProvider>
   )
 }
