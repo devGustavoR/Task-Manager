@@ -1,15 +1,30 @@
-import { Text, XStack } from 'tamagui'
+import { Button, Text, YStack } from 'tamagui'
+
+import Check from '../../assets/checklist.svg'
 
 export default function Home() {
   return (
-    <XStack p="$6" pt="$8" alignItems="center" justifyContent="center">
-      <Text fontSize={20} fontFamily="$body" textAlign="center">
+    <YStack
+      bg="$gray5"
+      p="$5"
+      // pt="$10"
+      pb="$20"
+      alignItems="center"
+      justifyContent="center"
+      f={1}
+    >
+      <Text pt="$15" fontSize={15} fontFamily="$body" textAlign="center">
         Gerencie
         {'\n'}
         suas tarefas com
         {'\n'}
         mais facilidade
       </Text>
-    </XStack>
+      <Check />
+      <Button bg="$orange10" size="$5" color="$orange1">
+        {' '}
+        Próximo{' '}
+      </Button>
+    </YStack>
   )
 }
