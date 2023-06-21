@@ -1,12 +1,14 @@
 import { useFonts } from 'expo-font'
 
-import { TamaguiProvider } from 'tamagui'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
-import config from './tamagui.config'
-
-import Home from './src/Home/Home'
+import Home from './src/pages/Home/Home'
+import Login from './src/pages/Login/Login'
 
 // import { Users } from './src/components/Users'
+
+const Stack = createStackNavigator()
 
 export default function App() {
   const [loaded] = useFonts({
@@ -19,8 +21,21 @@ export default function App() {
   }
 
   return (
-    <TamaguiProvider config={config}>
-      <Home />
-    </TamaguiProvider>
+    <>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Home}
+            options={{ title: '', headerShown: false }}
+          />
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{ title: '', headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </>
   )
 }
